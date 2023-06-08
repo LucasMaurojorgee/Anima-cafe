@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import TablaProductos from "./components/tablaProductos/TablaProductos";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const products = [
+    {categoria: "Cafetería", precio: "$90", stock: 10, nombre: "Espresso"},
+    {categoria: "Cafetería", precio: "$120", stock: 15, nombre: "Cortado"},
+    {categoria: "Cafetería", precio: "$160", stock: 0, nombre: "Capucchino"},
+    {categoria: "Panadería", precio: "$190", stock: 5, nombre: "Pan de Nuez"},
+    {categoria: "Panadería", precio: "$160", stock: 1, nombre: "Pan de Campo"},
+    {categoria: "Dulces", precio: "$180", stock: 0, nombre: "Carrot Cake"},
+    {categoria: "Dulces", precio: "$60", stock: 50, nombre: "Cookie"},
+    {categoria: "Dulces", precio: "$120", stock: 50, nombre: "Chocotorta"},
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Anima Cafe</h1>
+
+      <TablaProductos products={products} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
